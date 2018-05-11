@@ -1,0 +1,36 @@
+DATASET: cocostuff
+ROOT: /home/modulabs/soojin/DataSet/GIANA2017_Data/train
+LABELS: /home/modulabs/soojin/DataSet/GIANA2017_Data/train_label
+
+IMAGE:
+    MEAN:
+        R: 0.445
+        G: 0.287
+        B: 0.190
+    SIZE:
+        WIDTH: 320
+        HEIGHT: 240
+
+# Model definition
+N_CLASSES: 2
+N_BLOCKS: [3, 4, 23, 3]
+PYRAMIDS: [6, 12, 18, 24]
+
+# Training setting
+BATCH_SIZE: 5
+IGNORE_LABEL: -1
+ITER_MAX: 20000
+ITER_SIZE: 2
+ITER_SNAP: 5000
+ITER_TF: 100
+LR_DECAY: 10
+LR: 2.5e-4
+MOMENTUM: 0.9
+OPTIMIZER: sgd
+POLY_POWER: 0.9
+WEIGHT_DECAY: 5.0e-4
+
+INIT_MODEL: ./data/resnet101_init.pth
+SAVE_DIR: .
+LOG_DIR: runs
+NUM_WORKERS: 4
